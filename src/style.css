@@ -45,8 +45,14 @@ input[type="text"]:focus {
   transition-duration: 2s;
 }
 
+.img-description {
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+}
+
 .Description {
-  padding-top: 15px;
+  padding: 30px;
   color: white;
   display: grid;
   justify-content: space-between;
@@ -58,4 +64,42 @@ input[type="text"]:focus {
   text-align: center;
   font-size: small;
   text-indent: 20px;
+  letter-spacing: 2px;
+}
+
+svg {
+  width: 100% i !important;
+  height: 80% !important;
+}
+
+.content-description {
+  display: grid;
+  justify-content: center;
+}
+
+.character-description {
+  color: #00b4cb;
+  display: grid;
+  justify-content: center;
+  background-color: black;
+  border-radius: 90px 90px 0px 0px;
+}
+
+.line-description {
+  display: flex;
+}
+
+.icon-description {
+  margin: 15%;
+  width: 20%;
+  height: 20%;
+  font-size: 2rem;
+}
+
+.p-desc-det {
+  font-size: 1.5rem;
+  text-align: center;
+  text-indent: 20px;
+  margin: 4.5vw;
+  width: 100%;
 }

@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import Member from "../components/Member";
+import MemberGithub from "../components/MemberGithub";
 import "../style.css";
 
 class Home extends Component {
   constructor() {
     super();
-    this.state = { visible: false, members: [], search: false, result: [] };
+    this.state = {
+      visible: false,
+      members: [],
+      member: [],
+      search: false,
+      result: [],
+    };
 
     fetch("https://api.github.com/orgs/grupotesseract/public_members")
       .then((response) => response.json())
@@ -35,6 +42,11 @@ class Home extends Component {
       this.setState({ search: false, result: [] });
     }
   };
+
+  // I press the back button to return to the initial list
+  handleBack() {
+    this.setState({ visible: false, member: [], search: false, result: [] });
+  }
 
   render() {
     if (!this.state.visible) {
@@ -94,7 +106,18 @@ class Home extends Component {
         );
       }
     } else {
-      return <p>Component MemberGit</p>;
+      return (
+        <div className="CharacterDetails">
+          <div>
+            <button onClick={() => this.handleBack()}>Voltar ao Inicio</button>
+          </div>
+          <h1 className="home-title">GitHub Member</h1>
+          <MemberGithub
+            key={"cd" + this.state.member.id}
+            member={this.state.member}
+          />
+        </div>
+      );
     }
   }
 }

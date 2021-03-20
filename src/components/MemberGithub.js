@@ -32,20 +32,20 @@ export default class MemberGithub extends Component {
         />
         <div className="character-description" key={user.id}>
           <div className="line-description">
-            <p className="icon-description">Nome</p>
+            <p className="name-description">Nome</p>
             <p className="p-desc-det">{user.name}</p>
           </div>
           <div className="line-description">
-            <p className="icon-description">Repos</p>
+            <p className="name-description">Repos</p>
             <p className="p-desc-det">{user.public_repos}</p>
           </div>
           <div className="line-description">
-            <p className="icon-description">Seguidores</p>
+            <p className="name-description">Seguidores</p>
             <p className="p-desc-det">{user.followers}</p>
           </div>
           <div className="line-description">
-            <p className="icon-description">Data</p>
-            <p className="p-desc-det">{user.created_at}</p>
+            <p className="name-description">Data</p>
+            <p className="p-desc-det">{new Date(user.created_at).toUTCString()}</p>
           </div>
         </div>
       </div>

@@ -108,8 +108,8 @@ class Home extends Component {
     } else {
       return (
         <div className="CharacterDetails">
-          <div>
-            <button onClick={() => this.handleBack()}>Voltar ao Inicio</button>
+          <div className="ContentBackbutton">
+            <button className="Backbutton" onClick={() => this.handleBack()}>Voltar ao Inicio</button>
           </div>
           <h1 className="home-title">GitHub Member</h1>
           <MemberGithub
